@@ -1,0 +1,91 @@
+% Copyright 2022 by ry_Tom
+%
+% This file may be distributed and/or modified
+%
+% 1. under the LaTeX Project Public License and/or
+% 2. under the GNU Public License.
+%
+% See the file doc/licenses/LICENSE for more details.
+
+\mode<presentation>
+
+\useoutertheme{infolines}
+
+\setbeamersize{text margin left=20pt, text margin right=20pt}
+
+\setbeamerfont{block title}{size={}}
+
+% color definition
+\definecolor{Hinata}{RGB}{91, 190, 228}
+\definecolor{MyRed}{RGB}{253, 72, 47}
+\definecolor{MyBlack}{RGB}{60, 60, 73}
+
+% palette
+\setbeamercolor{palette primary}{fg=white, bg=Hinata}
+\setbeamercolor{palette secondary}{fg=white, bg=Hinata!90!black}
+\setbeamercolor{palette tertiary}{fg=white, bg=Hinata!80!black}
+
+% normal text
+\setbeamercolor{normal text}{fg=MyBlack}
+% alerted text
+\setbeamercolor{alerted text}{fg=MyRed}
+\setbeamerfont{alerted text}{series=\bfseries}
+
+% title
+\setbeamercolor{titlelike}{parent={palette primary}}
+\setbeamercolor*{subsection in head/foot}{parent={palette secondary}}
+
+\setbeamertemplate{title page}[default][sep=12pt]{}
+\setbeamertemplate{section page}
+{
+	\vfill
+	\centering
+	\begin{beamercolorbox}[sep=12pt,center]{titlelike}
+		\usebeamerfont{title}\insertsection\par
+	\end{beamercolorbox}
+	\vfill
+}
+
+% box
+\setbeamercolor{block title}{parent={palette primary}}
+\setbeamercolor{block body}{use={block title}, bg=block title.bg!20}
+\setbeamercolor{block title alerted}{fg=white, bg=MyRed}
+\setbeamercolor{block body alerted}{use={block title alerted}, bg=block title alerted.bg!20}
+\setbeamercolor{block title example}{parent={block title}}
+\setbeamercolor{block body example}{parent={block body}}
+
+% no navigation bar
+\setbeamertemplate{navigation symbols}{}
+
+% toc
+\setbeamertemplate{section in toc}{%
+    \usebeamercolor[fg]{enumerate item}\inserttocsectionnumber.\ \ \usebeamercolor[fg]{normal text}\inserttocsection\par%
+}
+
+% enumerate
+\setbeamertemplate{enumerate items}[default]
+\setbeamercolor{enumerate item}{fg=Hinata}
+\setbeamercolor{enumerate subitem}{parent={enumerate item}}
+\setbeamercolor{enumerate subsubitem}{parent={enumerate item}}
+
+% itemize
+\setbeamertemplate{itemize items}[circle]
+\setbeamercolor{itemize item}{fg=Hinata}
+\setbeamercolor{itemize subitem}{parent={enumerate item}}
+\setbeamercolor{itemize subsubitem}{parent={enumerate item}}
+
+% bibliography
+\setbeamertemplate{bibliography item}[text]
+\setbeamertemplate{bibliography entry article}{}
+\setbeamertemplate{bibliography entry title}{}
+\setbeamertemplate{bibliography entry location}{}
+\setbeamertemplate{bibliography entry note}{}
+
+\setbeamercolor*{bibliography item}{parent={enumerate item}}
+\setbeamercolor*{bibliography entry title}{parent={normal text}}
+\setbeamercolor*{bibliography entry author}{parent={normal text}}
+\setbeamercolor*{bibliography entry location}{parent={normal text}}
+\setbeamercolor*{bibliography entry note}{parent={normal text}}
+
+\mode
+<all>

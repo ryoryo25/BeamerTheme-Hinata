@@ -1,0 +1,119 @@
+\documentclass[unicode,11pt,t]{beamer}
+\usepackage{luatexja}
+
+\usepackage[no-math]{fontspec}
+\usepackage[no-math]{luatexja-fontspec}
+
+\setsansfont[BoldFont=Helvetica Bold]{Helvetica}
+\setsansjfont[BoldFont=Hiragino Sans W7]{Hiragino Sans W5}
+
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{bm}
+
+\usepackage{siunitx}
+\sisetup{detect-all}
+
+\usepackage{graphicx}
+\usepackage{xcolor}
+
+% biblatex使用
+\usepackage[style=numeric,backend=bibtex]{biblatex}
+
+\usepackage{bookmark} % hyperrefの上位互換
+\usepackage{xurl} % urlの拡張版
+\hypersetup{
+	unicode,
+	bookmarksnumbered=true,
+	hidelinks,
+	final
+}
+
+% 日本語をボールドに
+\renewcommand{\kanjifamilydefault}{\gtdefault}
+\usefonttheme{structurebold}
+\usefonttheme{professionalfonts}
+
+\usetheme{Hinata}
+
+\author{日向\ 太陽}
+\title{Beamerのテスト}
+%\subtitle{This is test. これはテストです}
+\institute{日向大学}
+\date{\today}
+%	\subject{}
+
+% biblatex data base file
+%\bibliography{ref.bib}
+
+\begin{document}
+	\begin{frame}[plain]
+		\maketitle
+	\end{frame}
+
+	\section{はじめに}
+	\begin{frame}
+		\frametitle{お品書き}
+		\tableofcontents
+	\end{frame}
+
+	\begin{frame}
+		\frametitle{テストフレーム}
+		\begin{itemize}
+			\item ABCabc
+			\begin{itemize}
+				\item aaa
+				\begin{itemize}
+					\item aa
+					\item bb
+				\end{itemize}
+				\item bbb
+			\end{itemize}
+			\item \alert{This is alerted!}
+		\end{itemize}
+		\begin{enumerate}
+			\item aaa
+			\begin{enumerate}
+				\item aaa
+				\item bbb
+			\end{enumerate}
+			\item bbb
+		\end{enumerate}
+		\begin{align*}
+			I &= \int_{-\infty}^{\infty} e^{-x^2} dx \\
+			&= \sqrt{\pi}
+		\end{align*}
+	\end{frame}
+
+	\begin{frame}{テストフレーム2}
+		\begin{block}{block環境}
+			block枠囲いの環境
+		\end{block}
+		\begin{alertblock}{alertblock}
+			alertblock枠囲いの環境その 2（注意?）
+		\end{alertblock}
+		\begin{exampleblock}{exampleblock}
+			exampleblock枠囲いの環境その 3（例示?）
+		\end{exampleblock}
+	\end{frame}
+
+	\begin{frame}{テストフレーム3}
+		\begin{theorem}
+			There are infinity sets.
+		\end{theorem}
+	\end{frame}
+	
+	\begin{frame}{columnsテスト}
+		% sum of width = 0.95 is good
+		\begin{columns}
+			\begin{column}{0.475\textwidth}
+				あいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえお
+			\end{column}
+			\begin{column}{0.475\textwidth}
+				かきくけこかきくけこかきくけこかきくけこかきくけこかきくけこかきくけこ
+			\end{column}
+		\end{columns}
+	\end{frame}
+\end{document}
