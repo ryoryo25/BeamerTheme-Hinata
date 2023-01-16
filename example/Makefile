@@ -5,4 +5,4 @@ all:
 	lualatex example.tex
 
 clean:
-	rm -f *.bib *.aux *.log *.nav *.snm *.toc *.xml *.gz
+	rm -f *.bbl *.blg *.lol *.lof *.aux *.log *.nav *.snm *.toc *.xml *.gz
